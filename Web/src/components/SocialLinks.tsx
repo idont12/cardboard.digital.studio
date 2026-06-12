@@ -30,7 +30,7 @@ function SocialLink({ href, label, icon }: SocialLinkProps) {
 export default function SocialLinks() {
   const links = [
     {
-      href: 'https://tiktok.com/@cardboarddigital',
+      href: 'https://www.tiktok.com/@cardboard.digital.studio',
       label: 'Follow Cardboard Digital on TikTok',
       icon: (
         <svg
@@ -48,17 +48,17 @@ export default function SocialLinks() {
       ),
     },
     {
-      href: 'https://instagram.com/cardboarddigital',
+      href: 'https://www.instagram.com/cardboard.digital.studio/',
       label: 'Follow Cardboard Digital on Instagram',
       icon: <Instagram className="w-5 h-5" strokeWidth={2.5} />,
     },
     {
-      href: 'https://youtube.com/@cardboarddigital',
+      href: 'https://www.youtube.com/@CardboardDigitalStudio',
       label: 'Subscribe to Cardboard Digital on YouTube',
       icon: <Youtube className="w-5 h-5" strokeWidth={2.5} />,
     },
     {
-      href: 'https://cardboard-digital.itch.io',
+      href: 'https://yardenz.itch.io/',
       label: 'View our Itch.io Game Profile',
       icon: <Gamepad2 className="w-5 h-5" strokeWidth={2.5} />,
     },
