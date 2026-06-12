@@ -27,7 +27,7 @@ export default function App() {
 
   // Fetch games configuration on mount
   useEffect(() => {
-    fetch('/games.json')
+    fetch('games.json')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to download blueprint data stream.');
