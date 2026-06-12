@@ -1,0 +1,6 @@
+{
+  "name": "Cardboard Digital Studio",
+  "description": "A blueprint-inspired responsive game hub and link-in-bio page for playing and rating weekly mini-game prototypes, with a live countdown and customizable About section.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
