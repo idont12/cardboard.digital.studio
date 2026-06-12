@@ -42,7 +42,7 @@ export default function GameCard({ game, onOpenDetails, isNew }: GameCardProps) 
             </h3>
           </div>
           <span className="text-[10px] font-mono text-white/50 tracking-wider">
-            WEEK {game.prototypeWeek} PROTOTYPE
+            PROTOTYPE {game.prototypeWeek}
           </span>
         </div>
       </div>
