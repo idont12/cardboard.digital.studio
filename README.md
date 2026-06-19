@@ -18,3 +18,7 @@ View your app in AI Studio: https://ai.studio/apps/d0dd6e45-490d-4510-a81b-83af4
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Analytics
+
+To enable Google Analytics 4, add `VITE_GA_MEASUREMENT_ID` to [.env.local](.env.local) using your GA measurement ID, such as `G-XXXXXXXXXX`. The app tracks modal opens, plus clicks on the `PLAY PROTOTYPE` and `VIEW ON ITCH` buttons with the game id and title.

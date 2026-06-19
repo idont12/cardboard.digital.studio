@@ -12,6 +12,7 @@ import CountdownTimer from './components/CountdownTimer';
 import AboutSection from './components/AboutSection';
 import GameCard from './components/GameCard';
 import GameModal from './components/GameModal';
+import { initializeAnalytics, trackAnalyticsEvent } from './lib/analytics';
 
 // Imported blueprint logo
 import studioLogo from './assets/images/studio_logo_1781240650704.jpg';
@@ -27,6 +28,8 @@ export default function App() {
 
   // Fetch games configuration on mount
   useEffect(() => {
+    initializeAnalytics();
+
     fetch('games.json')
       .then((res) => {
         if (!res.ok) {
@@ -47,6 +50,12 @@ export default function App() {
 
   // Open & Close detailing modals
   const handleOpenDetails = (game: Game) => {
+    trackAnalyticsEvent('game_modal_open', {
+      game_id: game.id,
+      game_title: game.title,
+      prototype_week: game.prototypeWeek,
+    });
+
     setSelectedGame(game);
     setIsModalOpen(true);
   };

@@ -7,6 +7,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, ExternalLink, MessageSquareText, Check, ArrowLeft } from 'lucide-react';
 import { Game } from '../types';
+import { trackAnalyticsEvent } from '../lib/analytics';
 
 interface GameModalProps {
   game: Game | null;
@@ -58,6 +59,22 @@ export default function GameModal({
 
   // Secure feedback form target (using customizable JSON URL or fallback)
   const feedbackFormUrl = localGame.rateFormUrl || `https://docs.google.com/forms/d/e/1FAIpQLSdvf60D79s6V-SiaTzVsh0X9Ue6rV-K3_n7gW6qNqYVb0qA1w/viewform?embedded=true&entry.948271810=${encodeURIComponent(localGame.title)}`;
+
+  const handlePlayPrototypeClick = () => {
+    trackAnalyticsEvent('game_play_prototype_click', {
+      game_id: localGame.id,
+      game_title: localGame.title,
+      destination: localGame.playUrl,
+    });
+  };
+
+  const handleViewItchClick = () => {
+    trackAnalyticsEvent('game_view_itch_click', {
+      game_id: localGame.id,
+      game_title: localGame.title,
+      destination: localGame.itchUrl,
+    });
+  };
 
   return (
     <AnimatePresence>
@@ -130,6 +147,7 @@ export default function GameModal({
                   href={localGame.playUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handlePlayPrototypeClick}
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-blue-600 font-extrabold font-sans py-3 px-5 rounded-xl transition-all text-sm cursor-pointer shadow-lg"
                   aria-label={`Play ${localGame.title}`}
                 >
@@ -141,6 +159,7 @@ export default function GameModal({
                   href={localGame.itchUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleViewItchClick}
                   className="inline-flex items-center justify-center gap-2 border border-white/40 bg-white/5 hover:bg-white/10 text-white font-bold font-sans py-3 px-5 rounded-xl transition-all text-sm cursor-pointer"
                   aria-label={`View ${localGame.title} on Itch.io`}
                 >
