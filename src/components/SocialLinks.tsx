@@ -63,7 +63,7 @@ export default function SocialLinks() {
       icon: <Gamepad2 className="w-5 h-5" strokeWidth={2.5} />,
     },
     {
-  href: 'https://bsky.app/profile/YOUR_PROFILE',
+  href: 'https://bsky.app/profile/cardboarddigitalst.bsky.social',
   label: 'Follow Cardboard Digital on Bluesky',
   icon: (
     <svg
@@ -77,7 +77,7 @@ export default function SocialLinks() {
   ),
 },
 {
-  href: 'https://x.com/YOUR_PROFILE',
+  href: 'https://x.com/YardenZilber',
   label: 'Follow Cardboard Digital on X',
   icon: (
     <svg
